@@ -1,0 +1,100 @@
+{% extends "manage/manage.html" %}
+{% load static %}
+
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/employee_list.css' %}">
+{% endblock %}
+
+{% block main_content %}
+
+<div class="employee-container">
+    <div class="search-bar">
+        <form method="GET">
+            <input 
+                type="search" 
+                name="q" 
+                placeholder="Search employees..." 
+                value="{{ request.GET.q }}"
+            >
+    
+            <select name="department">
+                <option value="">All Departments</option>
+                {% for dept in departments %}
+                    <option value="{{ dept.pk }}" {% if request.GET.department == dept.pk|stringformat:"s" %}selected{% endif %}>
+                        {{ dept.department_name }}
+                    </option>
+                {% endfor %}
+            </select>
+            
+            <select name="role">
+                <option value="">All Roles</option>
+                {% for r in roles %}
+                    <option value="{{ r.pk }}" {% if request.GET.role == r.pk|stringformat:"s" %}selected{% endif %}>
+                        {{ r.role_name }}
+                    </option>
+                {% endfor %}
+            </select>
+            
+    
+            <select name="status">
+                <option value="">All Status</option>
+                <option value="Active" {% if request.GET.status == "Active" %}selected{% endif %}>Active</option>
+                <option value="Inactive" {% if request.GET.status == "Inactive" %}selected{% endif %}>Inactive</option>
+            </select>
+    
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    
+    
+<!-- Export CSV Button -->
+    <div class="export-csv">
+        <a href="{% url 'export_employees_csv' %}?q={{ request.GET.q }}&department={{ request.GET.department }}&role={{ request.GET.role }}&status={{ request.GET.status }}" class="btn-export">Export CSV</a>
+    </div>
+    <div class="employee-table">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>View</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Hire Date</th>
+                    <th>Department</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                    <td><a href="{% url 'individual_stats' employee.employee_id%}"><img class="view-image "src="{% static 'images/view.webp' %}" alt="" width="30px" height="30px"></a></td>
+                    <td>{{ employee.employee_id }}</td>
+                    <td>{{ employee.first_name }} {{ employee.last_name }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.phone }}</td>
+                    <td>{{ employee.hire_date }}</td>
+                    <td>{{ employee.department }}</td>
+                    <td>{{ employee.role }}</td>
+                    <td class="status {{ employee.status|lower }}">{{ employee.status }}</td>
+                    <td class="actions">
+                        <a href="{% url 'edit_employee' employee.employee_id %}" class="btn-edit">Edit</a>
+                        <a href="{% url 'delete_employee' employee.employee_id %}" class="btn-delete">Delete</a>
+                        <a href="{% url 'payroll_info' employee.employee_id %}" class="btn-payroll">Payroll</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="9" class="no-results">No employees found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,140 @@
+/* Main container for the form */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers children horizontally */
+  justify-content: center;
+  min-height: 80vh;
+  background-color: #f4f4f4; /* Light background for contrast */
+}
+h2{
+  color: #333;
+  text-align: center;
+}
+/* Style the form container */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #ffffff; /* White background for the form */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the form */
+}
+
+/* Styling individual form elements */
+form p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #333; /* Darker text color for readability */
+}
+
+form label {
+  flex: 1;
+  text-align: left;
+  font-weight: bold;
+  color: #333; /* Dark text to match the sidebar */
+}
+
+form input,
+form select,
+form textarea {
+  flex: 2;
+  padding: 8px;
+  border: 1px solid #ccc; /* Lighter border */
+  border-radius: 5px;
+  font-size: 1rem;
+  border-color: #ddd; /* Lighter border for input fields */
+  background-color: #f9f9f9; /* Light background */
+  color: #333; /* Dark text for inputs */
+  transition: border-color 0.3s ease-in-out; /* Smooth border color transition */
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none; /* Removes default focus outline */
+}
+
+form input[type="submit"] {
+  background-color: #007bff; /* Matching the blue from the sidebar */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style submit button */
+.button.is-primary {
+  background-color: #007bff; /* Blue to match the sidebar */
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button.is-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.departments-container {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.departments-container h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.departments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.department-card {
+  background-color: #f5f8ff;
+  border: 1px solid #d0d8e8;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.department-card h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.dept-code {
+  color: #555;
+  font-weight: 500;
+}
+
+.department-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: green solid 1px;
+  
+}
+
+

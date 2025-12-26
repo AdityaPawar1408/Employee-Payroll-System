@@ -1,0 +1,277 @@
+/* Global Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: poppins;
+}
+body {
+  background: linear-gradient(135deg, #121212, #2c2c2c);  /* Cool gradient background */
+  color: #f5f5f5;
+  
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  min-width: 200px;
+  transition: background 0.5s ease-in-out;
+}
+
+/* Headings */
+h1, h2 {
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00bcd4;  /* Neon light blue for the main heading */
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #8bc34a; /* Neon green */
+}
+
+/* Links */
+a {
+  color: #00bcd4; /* Neon light blue */
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #8bc34a;  /* Change to neon green on hover */
+  text-shadow: 0 0 10px rgba(139, 195, 74, 1);
+}
+
+/* Buttons */
+button {
+  background-color: #4caf50; /* Neon green background */
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #8bc34a; /* Neon green hover effect */
+  transform: scale(1.05);
+}
+
+/* Cards / Containers */
+.card, .payroll-card, .employee-card {
+  background-color: #1e1e2f;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.card:hover, .payroll-card:hover, .employee-card:hover {
+  transform: translateY(-5px); /* Hover effect */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Form Inputs */
+input, select, textarea {
+  background-color: #ffffff;
+  color: #f1f1f1;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  
+  outline: none;
+}
+
+/* Footer */
+footer {
+  background-color: #121212;
+  color: #8bc34a;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Adding a cool hover effect for links in footer */
+footer a {
+  color: #8bc34a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00bcd4;
+}
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  body {
+    margin: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card, .payroll-card, .employee-card {
+    padding: 20px;
+  }
+}
+
+
+
+
+
+/*delete employee*/
+.delete_employee {
+  width: 50%;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: #d9534f;
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  form .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  form .button.is-primary {
+    background: #d9534f;
+    color: white;
+  }
+
+  form .button.is-primary:hover {
+    background: #c9302c;
+  }
+
+  form a,
+  a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  form a:hover,
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+
+/*navbar*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  padding: 10px 30px;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar .nav-left, .navbar .nav-center, .navbar .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.navbar .nav-link:hover {
+  text-decoration: underline;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .logo img {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+}
+
+.navbar .logo span {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar .logout-btn {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.navbar .logout-btn:hover {
+  background-color: #c0392b;
+}
